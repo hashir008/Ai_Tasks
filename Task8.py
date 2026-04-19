@@ -13,7 +13,7 @@ def minmax(current_dep, n_index, max_turn, score, target):
                    minmax(current_dep + 1, n_index * 2 + 1, True, score, target))
 
 score = [12,2,7,3,5,11,9,13]
-tree_depth = int(math.log(len(score), 2))
+tree_depth = int(math.log(len(score), 2)) - 1
 
 optimal_value = minmax(0, 0, True, score, tree_depth)
 print(f"The optimal value is: {optimal_value}")
