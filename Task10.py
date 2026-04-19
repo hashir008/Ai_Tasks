@@ -6,4 +6,12 @@ df[df.select_dtypes(include='number') = df.select_dtypes(include='number').filln
 
 for col in df[df.select_dtypes(include='object').columns :
     df[col] = df[col].fillna(df[col].mode()[0])
-      
+
+print("datatype before conversion:")
+print(df.dtypes)
+
+for col in df.select_dtypes(include='float').columns:
+    df[col] = df[col].astype(int)
+
+print("datatype after converison")
+print(df.dtypes)
